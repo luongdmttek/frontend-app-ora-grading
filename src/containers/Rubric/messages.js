@@ -41,6 +41,11 @@ const messages = defineMessages({
     defaultMessage: 'The overall feedback is required',
     description: 'Error message when feedback input is required',
   },
+  feedbackPrompt: {
+    id: 'ora-grading.RubricFeedback.feedbackPrompt',
+    defaultMessage: '(Optional) What aspects of this response stood out to you? What did it do well? How could it be improved?',
+    description: 'Feedback prompt modal',
+  },
 });
 
 export default messages;

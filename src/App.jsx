@@ -25,7 +25,6 @@ export const App = ({ courseMetadata, isEnabled }) => (
         courseOrg={courseMetadata.org}
       />
       {!isEnabled && <DemoWarning />}
-      <CTA />
       <main>
         <ListView />
       </main>

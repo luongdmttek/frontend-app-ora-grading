@@ -6,6 +6,11 @@ const messages = defineMessages({
     defaultMessage: 'Back to all open responses',
     description: 'Breadcrumbs link text to return to ORA list in LMS',
   },
+  oraName: {
+    id: 'ora-grading.ListView.ListViewBreadcrumbs.oraName',
+    defaultMessage: 'Open Response Assessment',
+    description: 'Title ORA',
+  },
   noResultsFoundTitle: {
     id: 'ora-grading.ListView.noResultsFoundTitle',
     defaultMessage: 'Nothing here yet',
@@ -30,6 +35,11 @@ const messages = defineMessages({
     id: 'ora-grading.ListView.tableHeaders.username',
     defaultMessage: 'Username',
     description: 'Username table column header for submission list view',
+  },
+  fullName: {
+    id: 'ora-grading.ListView.tableHeaders.fullName',
+    defaultMessage: 'Fullname',
+    description: 'Profile name table column header for submission list view',
   },
   teamName: {
     id: 'ora-grading.ListView.tableHeaders.teamName',

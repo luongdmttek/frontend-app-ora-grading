@@ -94,6 +94,11 @@ export class SubmissionsTable extends React.Component {
             {
               Header: this.userLabel,
               accessor: this.userAccessor,
+              disableFilters: true,
+            },
+            {
+              Header: this.translate(messages.fullName),
+              accessor: submissionFields.name
             },
             {
               Header: this.dateSubmittedLabel,
@@ -135,6 +140,7 @@ SubmissionsTable.propTypes = {
   isIndividual: PropTypes.bool.isRequired,
   listData: PropTypes.arrayOf(PropTypes.shape({
     username: PropTypes.string,
+    name: PropTypes.string,
     dateSubmitted: PropTypes.string,
     gradingStatus: PropTypes.string,
     score: PropTypes.shape({

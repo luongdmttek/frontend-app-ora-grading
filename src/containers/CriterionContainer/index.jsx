@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Form } from '@edx/paragon';
+import { FormattedMessage } from '@edx/frontend-platform/i18n';
 
 import { selectors } from 'data/redux';
 import { gradeStatuses } from 'data/services/lms/constants';
@@ -11,6 +12,7 @@ import InfoPopover from 'components/InfoPopover';
 import RadioCriterion from './RadioCriterion';
 import CriterionFeedback from './CriterionFeedback';
 import ReviewCriterion from './ReviewCriterion';
+import messages from './messages';
 
 /**
  * <CriterionContainer />
@@ -22,13 +24,17 @@ export const CriterionContainer = (props) => {
   return (
     <Form.Group>
       <Form.Label className="criteria-label">
-        <span className="criteria-title">{config.prompt}</span>
+        <span className="criteria-title">
+          <FormattedMessage {...messages.optionPrompt} values={{ prompt: config.label }} />
+        </span>
         <InfoPopover>
           {config.options.map((option) => (
             <div key={option.name} className="help-popover-option">
-              <strong>{option.label}</strong>
+              <strong>
+                <FormattedMessage {...messages.optionLabel} values={{ label: option.label }} />
+              </strong>
               <br />
-              {option.explanation}
+              <FormattedMessage {...messages.optionExplanation} values={{ label: option.label }} />
             </div>
           ))}
         </InfoPopover>

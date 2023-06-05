@@ -44,7 +44,7 @@ export class RadioCriterion extends React.Component {
               onChange={this.onChange}
               disabled={!isGrading}
             >
-              {option.label}
+              {intl.formatMessage(messages.optionLabel, {label: option.label})}
             </Form.Radio>
           ))}
           {isInvalid && (

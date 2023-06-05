@@ -84,12 +84,12 @@ selected.staticData = createSelector(
 );
 
 /**
- * Returns the username for the selected submission
- * @return {string} username
+ * Returns the name for the selected submission
+ * @return {string} name
  */
-selected.username = createSelector(
+selected.name = createSelector(
   [module.selected.staticData],
-  (staticData) => staticData.username,
+  (staticData) => staticData.name,
 );
 
 selected.teamName = createSelector(
@@ -100,10 +100,10 @@ selected.teamName = createSelector(
 selected.userDisplay = createSelector(
   [
     appSelectors.ora.isIndividual,
-    module.selected.username,
+    module.selected.name,
     module.selected.teamName,
   ],
-  (isIndividual, username, teamName) => (isIndividual ? username : teamName),
+  (isIndividual, name, teamName) => (isIndividual ? name : teamName),
 );
 
 /***********************************

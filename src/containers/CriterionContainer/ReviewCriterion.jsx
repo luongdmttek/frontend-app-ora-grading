@@ -16,7 +16,9 @@ export const ReviewCriterion = ({ config }) => (
     {config.options.map((option) => (
       <div key={option.name} className="criteria-option">
         <div>
-          <Form.Label className="option-label">{option.label}</Form.Label>
+          <Form.Label className="option-label">
+            <FormattedMessage {...messages.optionLabel} values={{ label: option.label }} />
+          </Form.Label>
           <FormControlFeedback className="option-points">
             <FormattedMessage {...messages.optionPoints} values={{ points: option.points }} />
           </FormControlFeedback>
