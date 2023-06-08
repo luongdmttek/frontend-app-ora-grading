@@ -38,7 +38,7 @@ const messages = defineMessages({
   },
   fullName: {
     id: 'ora-grading.ListView.tableHeaders.fullName',
-    defaultMessage: 'Fullname',
+    defaultMessage: 'Full name',
     description: 'Profile name table column header for submission list view',
   },
   teamName: {
