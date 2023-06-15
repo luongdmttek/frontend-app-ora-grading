@@ -26,7 +26,10 @@ export const ReviewActions = ({
   <div>
     <ActionRow className="review-actions">
       <span className="review-actions-username">
-        <span className="lead">{userDisplay}</span>
+        {fullnameDisplay ? 
+          (<span className="lead">{fullnameDisplay} ({userDisplay})</span>) : 
+          <span className="lead">{userDisplay}</span> 
+        }
         { gradingStatus && (
           <StatusBadge className="review-actions-status mr-3" status={gradingStatus} />
         )}
@@ -60,6 +63,7 @@ ReviewActions.defaultProps = {
 ReviewActions.propTypes = {
   gradingStatus: PropTypes.string,
   userDisplay: PropTypes.string.isRequired,
+  fullnameDisplay: PropTypes.string,
   score: PropTypes.shape({
     pointsEarned: PropTypes.number,
     pointsPossible: PropTypes.number,
@@ -71,6 +75,7 @@ ReviewActions.propTypes = {
 
 export const mapStateToProps = (state) => ({
   userDisplay: selectors.grading.selected.userDisplay(state),
+  fullnameDisplay: selectors.grading.selected.fullnameDisplay(state),
   gradingStatus: selectors.grading.selected.gradingStatus(state),
   score: selectors.grading.selected.score(state),
   showRubric: selectors.app.showRubric(state),
